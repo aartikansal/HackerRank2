@@ -36,3 +36,22 @@ some more methods
 There is no sample input/output for this problem. If you press "Run Code", it will compile it, but it won't show any outputs.
 
 Hint: See the oracle docs for more details about JAVA Reflection Methods and Fields
+
+
+SOLUTION 
+class Solution {
+     public static void main(String[] args) throws ClassNotFoundException{
+            Class student =Student.class;
+            Method[] methods = student.getDeclaredMethods();
+
+            ArrayList<String> methodList = new ArrayList<>();
+            for(Method method: methods){
+                methodList.add(method.getName());
+            }
+            Collections.sort(methodList);
+            for(String methodName: methodList){
+                System.out.println(methodName);
+            }
+        }
+
+    }
